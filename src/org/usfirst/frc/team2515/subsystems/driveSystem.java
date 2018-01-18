@@ -11,6 +11,7 @@
 
 package org.usfirst.frc.team2515.subsystems;
 
+import org.usfirst.frc.team2515.Robot;
 import org.usfirst.frc.team2515.RobotMap;
 import org.usfirst.frc.team2515.commands.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -61,6 +62,8 @@ public class driveSystem extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-
+    public void drive() {
+        mecanumDrive.driveCartesian(Robot.oi.joystick.getX(), Robot.oi.joystick.getY(),Robot.oi.joystick.getZ(), 0.0);
+    }
 }
 
