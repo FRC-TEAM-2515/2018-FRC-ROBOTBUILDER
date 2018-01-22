@@ -46,6 +46,7 @@ public class clawSystem extends Subsystem {
 
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
+    		stop();
     }
 
     @Override
@@ -56,6 +57,9 @@ public class clawSystem extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
+    public void stop() {
+    		clawMotor.set(0);
+    }
     public void open() {
     		clawMotor.set(.2);
     }
