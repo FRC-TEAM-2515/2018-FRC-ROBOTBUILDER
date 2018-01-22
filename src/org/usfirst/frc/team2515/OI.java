@@ -64,15 +64,16 @@ public class OI {
 
         joystick = new Joystick(0);
         
-        joystickOpenClawButton = new JoystickButton(joystick, 2);
-        joystickOpenClawButton.whenPressed(new openClaw());
+        joystickOpenClawButton = new JoystickButton(joystick, 1);
+        joystickOpenClawButton.whenPressed(new controlClaw(0.2));
         joystickCloseClawButton = new JoystickButton(joystick, 1);
-        joystickCloseClawButton.whenPressed(new closeClaw());
+        joystickCloseClawButton.whenPressed(new controlClaw(-0.2));
 
 
         // SmartDashboard Buttons
-        SmartDashboard.putData("closeClaw", new closeClaw());
-        SmartDashboard.putData("openClaw", new openClaw());
+        SmartDashboard.putData("controlClaw: stop", new controlClaw(0));
+        SmartDashboard.putData("controlClaw: open", new controlClaw(.2));
+        SmartDashboard.putData("controlClaw: close", new controlClaw(-.2));
         SmartDashboard.putData("lowerLift", new lowerLift());
         SmartDashboard.putData("raiseLift", new raiseLift());
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
