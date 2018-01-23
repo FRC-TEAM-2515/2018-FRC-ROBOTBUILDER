@@ -65,9 +65,9 @@ public class OI {
         joystick = new Joystick(0);
         
         joystickOpenClawButton = new JoystickButton(joystick, 2);
-        joystickOpenClawButton.whileHeld(new openClaw());
+        joystickOpenClawButton.whenPressed(new openClaw());
         joystickCloseClawButton = new JoystickButton(joystick, 1);
-        joystickCloseClawButton.whileHeld(new closeClaw());
+        joystickCloseClawButton.whenPressed(new closeClaw());
 
 
         // SmartDashboard Buttons

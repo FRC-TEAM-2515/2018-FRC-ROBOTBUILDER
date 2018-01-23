@@ -64,10 +64,10 @@ public class clawSystem extends Subsystem {
     		clawMotor.set(0);
     }
     public void open() {
-    		clawMotor.set(-1);
+		clawMotor.set(-0.2);
     }
     public void close() {
-		clawMotor.set(1);
+		clawMotor.set(0.2);
     }
     public boolean isSwitchSet() {
         return counter.get() > 0;
