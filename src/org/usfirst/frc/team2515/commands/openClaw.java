@@ -50,8 +50,11 @@ public class openClaw extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-		return isTimedOut();
-        //return false;
+    		if (isTimedOut()) {
+    			// if Timeout is reached return true
+    			return true;
+    		}
+        return false;
     }
 
     // Called once after isFinished returns true

@@ -40,7 +40,6 @@ public class closeClaw extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-    		Robot.clawSystem.initializeCounter();
     		Robot.clawSystem.close();
     }
 
@@ -52,9 +51,16 @@ public class closeClaw extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-    		return isTimedOut();
-    		//return Robot.clawSystem.isGrabbing();
-        //return false;
+    		//return isTimedOut();
+    		if (isTimedOut()) {
+    			// if Timeout is reached return true
+        		return true;
+    		}
+    		if (Robot.clawSystem.isGrabbing()) {
+    			// if Robot Claw limit switch is triggered return true
+        		return true;
+    		}
+        return false;
     }
 
     // Called once after isFinished returns true
