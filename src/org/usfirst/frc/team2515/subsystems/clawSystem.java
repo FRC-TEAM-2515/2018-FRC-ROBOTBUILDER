@@ -75,6 +75,12 @@ public class clawSystem extends Subsystem {
     public void initializeCounter() {
         counter.reset();
     }
-
+    /**
+     * Return true when the robot is grabbing an object hard enough
+     * to trigger the limit switch.
+     */
+    public boolean isGrabbing() {
+    		return clawLimit.get();
+    }
 }
 

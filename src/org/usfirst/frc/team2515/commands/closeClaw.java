@@ -52,9 +52,9 @@ public class closeClaw extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-    		isTimedOut();
-    		Robot.clawSystem.isSwitchSet();
-        return false;
+    		return isTimedOut();
+    		//return Robot.clawSystem.isGrabbing();
+        //return false;
     }
 
     // Called once after isFinished returns true
