@@ -78,7 +78,7 @@ public class OI {
         joystickLiftMiddleButton = new JoystickButton(joystick, 9);
         joystickLiftMiddleButton.whenPressed(new controlLift(30));
         joystickLiftTopButton = new JoystickButton(joystick, 7);
-        joystickLiftTopButton.whenPressed(new controlLift(0));
+        joystickLiftTopButton.whenPressed(new controlLift(100));
         joystickOpenClawButton = new JoystickButton(joystick, 2);
         joystickOpenClawButton.whenPressed(new openClaw());
         joystickCloseClawButton = new JoystickButton(joystick, 1);

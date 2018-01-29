@@ -38,6 +38,7 @@ public class lowerLift extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+    		Robot.liftSystem.moveDown();
     }
 
     // Called repeatedly when this Command is scheduled to run

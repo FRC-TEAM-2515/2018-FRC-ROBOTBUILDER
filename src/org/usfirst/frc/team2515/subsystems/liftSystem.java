@@ -97,10 +97,12 @@ public class liftSystem extends PIDSubsystem {
     	// Function for use by Joystick buttons for automatically moving to presets for bottom, switch, scale
     }
     public void moveUp () {
-    	// Function for use by Joystick button 4 for operator manually raising lift    	
+    	// Function for use by Joystick button 4 for operator manually raising lift    
+    		setSetpointRelative(.01);
     }
     public void moveDown () {
     	// Function for use by Joystick button 3 for operator manually lowering lift
+    		setSetpointRelative(-.01);
     }
     public void stop () {
     	// Function to stop lift from moving.
