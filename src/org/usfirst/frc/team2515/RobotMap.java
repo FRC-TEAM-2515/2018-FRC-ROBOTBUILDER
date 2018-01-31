@@ -81,7 +81,7 @@ public class RobotMap {
         clawSystemclawMotor = new Jaguar(6);
         LiveWindow.addActuator("clawSystem", "clawMotor", (Jaguar) clawSystemclawMotor);
         clawSystemclawMotor.setInverted(false);
-        liftSystemliftMotor = new WPI_TalonSRX(0);
+        liftSystemliftMotor = new WPI_TalonSRX(1);
         
         
         liftSystemliftEncoder = new Encoder(1, 2, true, EncodingType.k4X);
