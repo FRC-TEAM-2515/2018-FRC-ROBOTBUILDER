@@ -92,9 +92,6 @@ public class liftSystem extends PIDSubsystem {
     		return Math.abs(getPosition() - getSetpoint()) < .1;
     }
     
-    public void moveToPosition (double position) {
-    	// Function for use by Joystick buttons for automatically moving to presets for bottom, switch, scale
-    }
     public void moveUp () {
     	// Function for use by Joystick button 4 for operator manually raising lift    
     		setSetpointRelative(.01);
