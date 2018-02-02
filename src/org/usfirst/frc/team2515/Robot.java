@@ -18,6 +18,8 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.DriverStation;
+
 import org.usfirst.frc.team2515.commands.*;
 import org.usfirst.frc.team2515.subsystems.*;
 
@@ -93,6 +95,23 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
+		String gameData;
+		/**
+		 * The following code pulls game data instructing the computer
+		 * which side of the switch is the current alliance color.
+		 * More information available at this URL:
+		 * https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/826278-2018-game-data-details
+		 */
+		gameData = DriverStation.getInstance().getGameSpecificMessage();
+		if(gameData.charAt(0) == 'L')
+		{
+			//Put left auto code here
+		} else {
+			//Put right auto code here
+		}
+		/**
+		 * END SELECTION OF AUTONOMOUS ACTION
+		 */
         autonomousCommand = chooser.getSelected();
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
