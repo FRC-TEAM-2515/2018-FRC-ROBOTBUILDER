@@ -110,13 +110,14 @@ public class Robot extends TimedRobot {
 		if(gameData.charAt(0) == 'L')
 		{
 			//Put left auto code here
+			autonomousCommand = new autoDriveForward(1);
 		} else {
 			//Put right auto code here
 		}
 		/**
 		 * END SELECTION OF AUTONOMOUS ACTION
 		 */
-        autonomousCommand = chooser.getSelected();
+        // autonomousCommand = chooser.getSelected();
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
     }
@@ -147,6 +148,6 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        Robot.driveSystem.drive();
+        Robot.driveSystem.drive(Robot.oi.joystick.getX(), Robot.oi.joystick.getY(),Robot.oi.joystick.getZ(), 0.0);
     }
 }

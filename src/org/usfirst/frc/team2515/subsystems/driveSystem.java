@@ -62,8 +62,9 @@ public class driveSystem extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    public void drive() {
-        mecanumDrive.driveCartesian(Robot.oi.joystick.getX(), Robot.oi.joystick.getY(),Robot.oi.joystick.getZ(), 0.0);
+    public void drive(double varX, double varY, double varZ, double varA) {
+        //mecanumDrive.driveCartesian(Robot.oi.joystick.getX(), Robot.oi.joystick.getY(),Robot.oi.joystick.getZ(), 0.0);
+    		mecanumDrive.driveCartesian(varX, varY, varZ, varA);
     }
 }
 
