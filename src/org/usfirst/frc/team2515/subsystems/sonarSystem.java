@@ -53,6 +53,14 @@ public class sonarSystem extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-
+	public float getRange(){
+		float in = (float) ((frontSonar.getVoltage()*1000)/.977);
+		//Log.info("Metric: " + mm);
+		return in;
+	}
+	
+	public float getRaw(){
+		return (float) (frontSonar.getVoltage());
+	}
 }
 

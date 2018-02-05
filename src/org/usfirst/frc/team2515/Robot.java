@@ -110,7 +110,7 @@ public class Robot extends TimedRobot {
 		if(gameData.charAt(0) == 'L')
 		{
 			//Put left auto code here
-			autonomousCommand = new autoDriveForward(1);
+			autonomousCommand = new autoDriveForward(10);
 		} else {
 			//Put right auto code here
 		}
