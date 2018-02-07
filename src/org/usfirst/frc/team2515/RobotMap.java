@@ -18,9 +18,7 @@ import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.PIDSourceType;
-import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
@@ -75,22 +73,22 @@ public class RobotMap {
         driveSystemanalogGyro = new AnalogGyro(0);
         LiveWindow.addSensor("driveSystem", "analogGyro", driveSystemanalogGyro);
         driveSystemanalogGyro.setSensitivity(0.007);
-        climbSystemclimbMotor = new Spark(5);
-        LiveWindow.addActuator("climbSystem", "climbMotor", (Spark) climbSystemclimbMotor);
+        climbSystemclimbMotor = new Talon(5);
+        LiveWindow.addActuator("climbSystem", "climbMotor", (Talon) climbSystemclimbMotor);
         climbSystemclimbMotor.setInverted(false);
         clawSystemclawLimit = new DigitalInput(0);
         LiveWindow.addSensor("clawSystem", "clawLimit", clawSystemclawLimit);
         
-        clawSystemclawMotor = new Jaguar(6);
-        LiveWindow.addActuator("clawSystem", "clawMotor", (Jaguar) clawSystemclawMotor);
+        clawSystemclawMotor = new Talon(6);
+        LiveWindow.addActuator("clawSystem", "clawMotor", (Talon) clawSystemclawMotor);
         clawSystemclawMotor.setInverted(false);
         liftSystemliftMotor = new WPI_TalonSRX(1);
         
         
         liftSystemliftEncoder = new Encoder(1, 2, true, EncodingType.k4X);
         LiveWindow.addSensor("liftSystem", "liftEncoder", liftSystemliftEncoder);
-        liftSystemliftEncoder.setDistancePerPulse(1.0);
-        liftSystemliftEncoder.setPIDSourceType(PIDSourceType.kRate);
+        liftSystemliftEncoder.setDistancePerPulse(0.002);
+        liftSystemliftEncoder.setPIDSourceType(PIDSourceType.kDisplacement);
         sonarSystemfrontSonar = new AnalogInput(1);
         LiveWindow.addSensor("sonarSystem", "frontSonar", sonarSystemfrontSonar);
         
