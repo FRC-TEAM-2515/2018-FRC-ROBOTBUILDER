@@ -19,7 +19,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.DriverStation;
-
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import org.usfirst.frc.team2515.commands.*;
 import org.usfirst.frc.team2515.subsystems.*;
 
@@ -148,6 +148,6 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        Robot.driveSystem.drive(Robot.oi.joystick.getX(), Robot.oi.joystick.getY(),Robot.oi.joystick.getZ(), 0.0);
+        Robot.driveSystem.drive(Robot.oi.joystick.getX(), Robot.oi.joystick.getY()/2,Robot.oi.joystick.getZ(), 0.0);
     }
 }

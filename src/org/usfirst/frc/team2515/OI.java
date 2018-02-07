@@ -78,11 +78,11 @@ public class OI {
         joystickRaiseLiftButton = new JoystickButton(joystick, 4);
         joystickRaiseLiftButton.whileHeld(new liftRaiseManually());
         joystickLiftBottomButton = new JoystickButton(joystick, 11);
-        joystickLiftBottomButton.whenPressed(new controlLift(0));
+        joystickLiftBottomButton.whenPressed(new liftMoveToBottom(1));
         joystickLiftMiddleButton = new JoystickButton(joystick, 9);
-        joystickLiftMiddleButton.whenPressed(new lfitMoveToMiddle(50));
+        joystickLiftMiddleButton.whenPressed(new liftMoveToMiddle(5));
         joystickLiftTopButton = new JoystickButton(joystick, 7);
-        joystickLiftTopButton.whenPressed(new liftMoveToTop(100));
+        joystickLiftTopButton.whenPressed(new liftMoveToTop(10));
         joystickOpenClawButton = new JoystickButton(joystick, 2);
         joystickOpenClawButton.whenPressed(new openClaw());
         joystickCloseClawButton = new JoystickButton(joystick, 1);
@@ -100,8 +100,8 @@ public class OI {
         SmartDashboard.putData("pidControlLift: middle", new pidControlLift(0));
         SmartDashboard.putData("pidControlLift: top", new pidControlLift(0));
         SmartDashboard.putData("liftMoveToTop: position", new liftMoveToTop(100));
-        SmartDashboard.putData("lfitMoveToMiddle: position", new lfitMoveToMiddle(50));
-        SmartDashboard.putData("liftMoveToBottom: position", new liftMoveToBottom(0));
+        SmartDashboard.putData("liftMoveToMiddle: position", new liftMoveToMiddle(5));
+        SmartDashboard.putData("liftMoveToBottom: position", new liftMoveToBottom(1));
         SmartDashboard.putData("liftRaiseManually", new liftRaiseManually());
         SmartDashboard.putData("liftLowerManually", new liftLowerManually());
         SmartDashboard.putData("climbUp", new climbUp());
@@ -112,7 +112,7 @@ public class OI {
         //joystick.getRawAxis(6); // HAT swtich X axis on top of joystick
         
         // Use use joystick 4th axis values -1 to 1 to create 50%-100% multiplier for acceleration/speed
-        accelerateMultiplier = (joystick.getRawAxis(4) + 3)*.25;
+        accelerateMultiplier = (joystick.getRawAxis(3) + 3)*.25;
         //SmartDashboard.putData("Accelerate Multiplier",joystick.getRawAxis(4) + 3)*.25);
     }
 
