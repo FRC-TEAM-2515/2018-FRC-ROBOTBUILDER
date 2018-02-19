@@ -74,7 +74,7 @@ public class RobotMap {
         climbSystemclimbMotor = new WPI_TalonSRX(2);
         
         
-        clawSystemclawMotor = new Talon(6);
+        clawSystemclawMotor = new Talon(4);
         LiveWindow.addActuator("clawSystem", "clawMotor", (Talon) clawSystemclawMotor);
         clawSystemclawMotor.setInverted(false);
         liftSystemliftMotor = new WPI_TalonSRX(1);
