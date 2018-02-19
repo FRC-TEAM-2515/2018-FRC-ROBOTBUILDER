@@ -57,7 +57,7 @@ public class autoDriveForward extends Command {
 			// if Timeout is reached return true
     			return true;
 		}    
-		if (Robot.sonarSystem.getRange() < 12) {
+		if (Robot.sonarSystem.getDistance() < 1.0) {
 			return true;
 		}
         return false;

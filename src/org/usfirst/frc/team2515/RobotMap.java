@@ -87,7 +87,7 @@ public class RobotMap {
         
         liftSystemliftEncoder = new Encoder(1, 2, true, EncodingType.k4X);
         LiveWindow.addSensor("liftSystem", "liftEncoder", liftSystemliftEncoder);
-        liftSystemliftEncoder.setDistancePerPulse(0.002);
+        liftSystemliftEncoder.setDistancePerPulse(1.0);
         liftSystemliftEncoder.setPIDSourceType(PIDSourceType.kDisplacement);
         sonarSystemfrontSonar = new AnalogInput(1);
         LiveWindow.addSensor("sonarSystem", "frontSonar", sonarSystemfrontSonar);
