@@ -24,6 +24,7 @@ import org.usfirst.frc.team2515.commands.*;
 import org.usfirst.frc.team2515.subsystems.*;
 
 
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -149,6 +150,7 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        Robot.driveSystem.drive(Robot.oi.joystick.getX(), Robot.oi.joystick.getY()/2,Robot.oi.joystick.getZ(), 0.0);
+		SmartDashboard.putNumber("Lift Position", Robot.liftSystem.getPosition());
+		Robot.driveSystem.drive(Robot.oi.joystick.getX()*Robot.oi.getAccelerateMultiplier(), Robot.oi.joystick.getY()*Robot.oi.getAccelerateMultiplier(),(Robot.oi.joystick.getZ()*0.75),0.0);
     }
 }

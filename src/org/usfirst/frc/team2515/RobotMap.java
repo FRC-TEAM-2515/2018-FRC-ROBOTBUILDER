@@ -16,7 +16,6 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CounterBase.EncodingType;
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.SpeedController;
@@ -40,8 +39,7 @@ public class RobotMap {
     public static SpeedController driveSystemrightRearMotor;
     public static MecanumDrive driveSystemmecanumDrive;
     public static AnalogGyro driveSystemanalogGyro;
-    public static SpeedController climbSystemclimbMotor;
-    public static DigitalInput clawSystemclawLimit;
+    public static WPI_TalonSRX climbSystemclimbMotor;
     public static SpeedController clawSystemclawMotor;
     public static WPI_TalonSRX liftSystemliftMotor;
     public static Encoder liftSystemliftEncoder;
@@ -73,11 +71,8 @@ public class RobotMap {
         driveSystemanalogGyro = new AnalogGyro(0);
         LiveWindow.addSensor("driveSystem", "analogGyro", driveSystemanalogGyro);
         driveSystemanalogGyro.setSensitivity(0.007);
-        climbSystemclimbMotor = new Talon(5);
-        LiveWindow.addActuator("climbSystem", "climbMotor", (Talon) climbSystemclimbMotor);
-        climbSystemclimbMotor.setInverted(false);
-        clawSystemclawLimit = new DigitalInput(0);
-        LiveWindow.addSensor("clawSystem", "clawLimit", clawSystemclawLimit);
+        climbSystemclimbMotor = new WPI_TalonSRX(2);
+        
         
         clawSystemclawMotor = new Talon(6);
         LiveWindow.addActuator("clawSystem", "clawMotor", (Talon) clawSystemclawMotor);
@@ -85,7 +80,7 @@ public class RobotMap {
         liftSystemliftMotor = new WPI_TalonSRX(1);
         
         
-        liftSystemliftEncoder = new Encoder(1, 2, true, EncodingType.k4X);
+        liftSystemliftEncoder = new Encoder(1, 2, false, EncodingType.k4X);
         LiveWindow.addSensor("liftSystem", "liftEncoder", liftSystemliftEncoder);
         liftSystemliftEncoder.setDistancePerPulse(1.0);
         liftSystemliftEncoder.setPIDSourceType(PIDSourceType.kDisplacement);

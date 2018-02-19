@@ -41,7 +41,7 @@ public class autoDriveForward extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-    		Robot.driveSystem.drive(.5, 0.0, 0.0, 0.0);
+		Robot.driveSystem.drive(0.0, -0.75, 0.0, 0.0);
     }
 
     // Called repeatedly when this Command is scheduled to run
