@@ -142,6 +142,8 @@ public class Robot extends TimedRobot {
         Robot.clawSystem.stop();
         // Set Lift to Bottom Position
         //new controlLift(0);
+        RobotMap.liftSystemliftMotor.stopMotor();
+ 		RobotMap.liftSystemliftEncoder.reset();
     }
 
     /**

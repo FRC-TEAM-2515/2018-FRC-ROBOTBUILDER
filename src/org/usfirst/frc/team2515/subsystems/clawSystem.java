@@ -61,8 +61,8 @@ public class clawSystem extends Subsystem {
     public void stop() {    			
     		clawMotor.set(0);
     }
-    public void open() {
-		clawMotor.set(1);
+    public void open(double speed) {
+		clawMotor.set(speed);
     }
     public void close() {
 		clawMotor.set(-1);

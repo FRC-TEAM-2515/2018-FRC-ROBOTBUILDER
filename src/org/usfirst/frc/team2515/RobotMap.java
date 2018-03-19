@@ -80,7 +80,7 @@ public class RobotMap {
         liftSystemliftMotor = new WPI_TalonSRX(1);
         
         
-        liftSystemliftEncoder = new Encoder(1, 2, false, EncodingType.k4X);
+        liftSystemliftEncoder = new Encoder(1, 2, true, EncodingType.k4X);
         LiveWindow.addSensor("liftSystem", "liftEncoder", liftSystemliftEncoder);
         liftSystemliftEncoder.setDistancePerPulse(1.0);
         liftSystemliftEncoder.setPIDSourceType(PIDSourceType.kDisplacement);
