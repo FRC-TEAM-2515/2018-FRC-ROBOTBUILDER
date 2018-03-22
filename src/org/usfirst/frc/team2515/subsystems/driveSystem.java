@@ -109,5 +109,8 @@ public class driveSystem extends Subsystem {
     public void resetGyro() {
     		analogGyro.reset();
     }
+    public double getGyro() {
+    	return analogGyro.getAngle();
+    }
 }
 
